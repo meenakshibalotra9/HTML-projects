@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>simple form</title>
+   <link  rel="stylesheet" href="../CSS PRACTICES FILES/csssimpleform.css">
+</head>
+<body>
+    <ul class="three">
+         <li class="four"> <a href="#">About us</a> </li>
+         <li class="four"> <a href="#">Feedback</a> </li>
+         <li class="four"> <a href="#">form</a></li>
+    </ul>
+    <form>
+    <h1>STUDENT INFORMATION</h1>
+    <hr>
+    <fieldset class="one">
+        <legend>Registration Form </legend>
+    
+    <div>
+     
+         <label for="name"><b>First name:</b></label>
+         <input type="text" name="First Name" id="name" placeholder="first name">
+         <label for="name"><b>last name:</b></label>
+         <input type="text" name="last name" id="name" placeholder="last name">
+         </div>
+
+         <br>
+
+<div>
+        <label for="mail"><b>E-mail:</b></label>
+        <input type="mail" name="E-mail" id="mail" placeholder="Enter email">
+        </div>
+
+        <br>
+<div>
+        <label for="pswd"><b>Password:</b></label>
+        <input type="password" name="password" id="pswd">
+</div>
+
+<br>
+<fieldset class="two">
+    <legend>Gender</legend>
+<p>
+    <label for="male">Male:</label>
+    <input type="radio" name="gender">
+</p>
+<p>  
+    <label for="Female">Female:</label>
+    <input type="radio" name="gender">
+</p>
+</fieldset>
+<br>
+
+<div>
+
+    <label for="type"><b>Country:</b></label>
+        
+        <select>
+            <option value="INDIA">INDIA</option>
+            <OPtion value="PAKISTAN">PAKISTAN</OPtion>
+            <OPTion value="CHINA">CHINA</OPTion>
+            </select>
+    </div>
+    
+    <p><b>qualification:</b>
+            <label for="qualification">10th<label>
+            <input type="checkbox" name="qualification">
+            <label for="qualification">11th<label>
+            <input type="checkbox" name="qualification">
+           <label for="qualification">UG<label>
+           <input type="checkbox" name="qualification">
+                </p>
+
+    <P>
+        
+        <label for="Date"><b>DOB:</b></label>
+        <input type="date" name="DOB" id="Date"> 
+    </P>
+    <p>
+        <b>ADDRESS:</b>
+        <Textarea rows="4"></Textarea> 
+    </p>
+    <p>
+        <b>COLOR:</b><input type="color" name="color-label">
+    </p>
+
+    <P>
+
+        <b>PHOTO:</b><input type="file" name="photofile">
+</P> 
+<P>
+  <b>COURSE:</b>
+  <SELect multiple="multiple">
+      <option value="1">C</option>
+      <option value="2">C++</option>
+      <option value="3">PYTHON</option>
+      <option value="4">JAVA</option>
+  </SELect>
+</P>
+<p>
+<input type="checkbox"><b>I agree:</b> <a href="#">Terms and conditions</a>
+
+</p>
+    <BUtton type="submit">SAVE</BUtton>
+    <BUTton type="reset"> RESET</BUTton>  
+
+    
+
+</fieldset>
+</body>
+</html>
