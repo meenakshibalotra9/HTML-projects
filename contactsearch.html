@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label >searchbyName</label>
+    <input type="search">
+    <button>search</button>
+    <p></p>
+    <script>
+        const contacts = ['rahul:27846789','jai:27828788','harsh:45632167'];
+        const para = document.querySelector('P');
+        const input= document.querySelector('input');
+        const btn=document.querySelector('button');
+        
+        btn.addEventListener('click',function(){
+            const searchName= input.value;
+            console.log(searchName);
+            input.value='';
+            input.focus();
+            for(let i=0;i<contacts.length;i++){
+        
+                let splitcontacts = contacts[i].split(':');
+                if(splitcontacts[0] === searchName){
+                    para.textContent = splitcontacts[0] + '\'s number is '+ splitcontacts[1] + '.';
+                    break;
+                }else{
+                    para.innertext = 'content not found.';
+                    }
+                 }
+             });  
+
+        </script>
+</body>
+</html>

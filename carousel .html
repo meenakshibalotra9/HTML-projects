@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #carousel img{
+        height: 500px;
+        width: 600px;
+    }
+    </style>
+</head>
+<body>
+    <section>
+        <header>Header comes here</header>
+        <main>
+        <section id="carousel">
+        <figure>
+        <img src="../HTML PRACTICES FILES/Images/image1.jpg">
+        <figcaption>slide <span class="curr_slide">1</span>of <span class="total_slides">10</span></figcaption>
+
+                </figure>
+                <section id="btn_container">
+                    <button class="btn start">start</button>
+                    <button class="btn stop">stop</button>
+                    <button class="btn Previous">Previous</button>
+                    <button class="btn next">next</button>
+                </section>
+           </section>
+</main><br>
+<footer>Footer comes here</footer>
+<script type="text/javascript">
+    
+(function(){
+    var imagesArray=[
+        "image1.jpg",
+        "image2.jpg",
+        "image3.jpg",
+        "image4.jpg",
+        "image5.jpg",
+        "image6.jpg"
+    ]
+    var ctr=0 ,fwd=true,strtBtn,stopBtn,nextBtn,prevBtn,timerObj;
+    var imgLen=imagesArray.length;
+    var cId=document.getElementById("carousel")
+    var img=(cId.getElementsByTagName("img"))[0];
+    //var id_btn=document.getElementsById("id_btn0")
+    //var class_btn=document.getElementsByClassName("btn")
+    //var tag_img=document.getElementsByTagName("img")
+   function changeImageSrcFwd(){
+        img.setAttribute("src","../HTML PRACTICES FILES/Images/"+imagesArray[ctr])
+        if(fwd){
+            ctr++;
+            if(ctr>=imgLen)
+                ctr=0
+        }else{
+            ctr--;
+            if(ctr<imgLen)
+            ctr=imgLen-1;
+        }
+    }
+
+    function changeImageSrcPrev(){
+        img.setAttribute("src","../HTML PRACTICES FILES/Images/"+imagesArray[ctr])
+        if(fwd){
+            ctr--;
+            if(ctr<0)
+                ctr=imgLen-1
+        }else{
+            ctr++;
+            if(ctr>imgLen)
+            ctr=imgLen-1;
+        }
+      }
+     
+    function startInterval(){
+        timerObj=setInterval(function(){
+        changeImageSrcFwd()
+        },1000);
+    }
+    function stopInterval(){
+        clearInterval(timerObj)
+      timerObj=null
+    }
+    function prevInterval(){
+        timerObj=changeImageSrcPrev()
+    }
+    function nextInterval(){
+        timerObj=changeImageSrcFwd()
+    }
+     function bindEventsToElements(){
+        strtBtn=(cId.getElementsByClassName("start"))[0]
+        stopBtn=(cId.getElementsByClassName("stop"))[0]
+        prevBtn=(cId.getElementsByClassName("Previous"))[0]
+        nextBtn=(cId.getElementsByClassName("next"))[0]
+        
+
+        strtBtn.addEventListener("click",startInterval);
+        stopBtn.addEventListener("click",stopInterval);
+        prevBtn.addEventListener("click",prevInterval);
+        nextBtn.addEventListener("click",nextInterval);
+        
+
+    }
+    bindEventsToElements();
+
+})();
+    </script>
+    </section>
+</body>
+</html>
+
+
